@@ -1,0 +1,18 @@
+SOBRE A AULA
+
+A asserção toBe é usada para verificar se dois valores são estritamente iguais, ou seja, 
+se são do mesmo tipo e têm o mesmo valor. 
+
+Essa asserção utiliza o operador de igualdade estrita (=== em JavaScript) para realizar a comparação.
+
+Aqui está um exemplo simples de como você pode usar toBe em um teste Jest:
+
+test('exemplo de teste com toBe', () => {
+  const resultado = 10 + 5;
+
+  // Verifica se resultado é estritamente igual a 15
+  expect(resultado).toBe(15);
+});
+
+Neste exemplo, o teste verifica se resultado é estritamente igual a 15 usando expect(resultado).toBe(15). 
+Se a asserção falhar, o Jest fornecerá informações sobre a diferença entre os valores esperados e os valores recebidos.
