@@ -40,8 +40,8 @@ A asserção <b>toEqual</b> é usada para verificar se dois valores são iguais 
 Essa asserção é frequentemente usada para comparar objetos e arrays de uma maneira mais profunda 
 do que a simples igualdade (===).
 
-Quando você usa toEqual, o framework de teste verifica se os valores comparados têm a mesma estrutura 
-e contêm os mesmos valores. Se você estiver testando objetos ou arrays, toEqual fará uma comparação profunda dos valores, 
+Quando você usa <b>toEqual</b>, o framework de teste verifica se os valores comparados têm a mesma estrutura 
+e contêm os mesmos valores. Se você estiver testando objetos ou arrays, <b>toEqual</b> fará uma comparação profunda dos valores, 
 garantindo que cada propriedade ou elemento seja igual.
 
 Aqui está um exemplo usando o framework de teste Jest:
@@ -54,18 +54,56 @@ test('Exemplo de toEqual', () => {
   expect(objeto1).toEqual(objeto2);
 });
 ```
-Neste exemplo, toEqual é usado para verificar se objeto1 é igual a objeto2. 
+Neste exemplo, <b>toEqual</b> é usado para verificar se objeto1 é igual a objeto2. 
 A comparação leva em consideração todas as propriedades dos objetos.
 
-Além disso, toEqual é útil para comparar arrays:
-
+Além disso, <b>toEqual</b> é útil para comparar arrays:
+```
 test('Exemplo de toEqual com arrays', () => {
   const array1 = [1, 2, 3];
   const array2 = [1, 2, 3];
 
   expect(array1).toEqual(array2);
 });
+```
+Aqui, <b>toEqual</b> garante que os arrays array1 e array2 tenham os mesmos elementos nas mesmas posições.
 
-Aqui, toEqual garante que os arrays array1 e array2 tenham os mesmos elementos nas mesmas posições.
+> Em resumo, a asserção <b>toEqual</b> é usada para verificar igualdade profunda entre dois valores, tornando-se uma escolha apropriada ao lidar com objetos e arrays em testes JavaScript.
 
-> Em resumo, a asserção toEqual é usada para verificar igualdade profunda entre dois valores, tornando-se uma escolha apropriada ao lidar com objetos e arrays em testes JavaScript.
+
+------
+
+#### About Class 03
+
+A asserção <b>toBeNull</b> no Jest é usada para verificar se um valor é null. <br/>
+Aqui está um exemplo simples:
+
+Suponha que você tenha uma função retornaNull que deve retornar null:
+
+```
+// arquivo exemplo.js
+function retornaNull() {
+  return null;
+}
+
+module.exports = retornaNull;
+```
+Agora, você pode criar um teste usando Jest para garantir que a função realmente retorne null:
+
+```
+// arquivo exemplo.test.js
+const retornaNull = require('./exemplo');
+
+test('A função retornaNull retorna null', () => {
+  expect(retornaNull()).toBeNull();
+});
+
+```
+Neste exemplo:
+
+    - expect(retornaNull()) é a expressão que representa o valor que você está testando.
+    - .toBeNull() é a asserção que verifica se o valor é null.
+
+Se a função retornaNull retornar algo diferente de null, o teste falhará, indicando que a função não está se comportando conforme o esperado.
+
+> Lembre-se de que o Jest fornece várias outras asserções úteis para testar diferentes condições. toBeNull é específico para verificar se um valor é null.
